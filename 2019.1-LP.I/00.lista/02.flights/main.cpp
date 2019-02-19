@@ -23,12 +23,7 @@ int main()
 {	
 	int nFlights;
 	string start;
-	struct Flights flight[10];
-
-	cout << ">>> Starting airport: ";
-	cin >> start;
-	start.resize(3);
-	cout << endl; 
+	struct Flights flight[] {{"A", "B"}, {"D", "B"},{"C", "D"}, {"B", "C"}};
 
 	nFlights = defineFlights(flight);
 	int tmp = searchItinerary(nFlights, flight, start);
@@ -36,41 +31,14 @@ int main()
 	return 0;
 }
 
-int defineFlights(struct Flights flight[])
-{
-	int i;
-	
-	cout << ">>> Warning:\n[1] limited to 10 flights\n" << "[2] when ready, type 'done'" << "\n\n";
-	
-	for (i = 0; i < 10; i++) {
-		cout << ">>> Flight [" << i+1 << "] <<<\n";
-		cout << ">>> Origin: ";
-		cin >> flight[i].origin;
-		
-		if (flight[i].origin == "done") {
-			cout << endl;
-			return i;
-		}
-
-		flight[i].origin.resize(3);
-		cout << ">>> Destination: ";
-		cin >> flight[i].destination;
-		flight[i].destination.resize(3); 
-		cout << endl;
-	}
-	cout << endl;
-
-	return i;
-}
-
-/* Incomplete :( */
 int searchItinerary(int nFlights, struct Flights flight[], string start) 
 {
-	int i, cont;
 	string itinerary[nFlights];
 
-	for (i = 0, cont = 0; cont < nFlights; i++) {
-
+	for (int i = 0; i < nFlights; i++) {
+		if (flight[i].origin == start) {
+			return NULL;
+		}
 	}
 
 	for (int i = 0; i < nFlights; i++) {

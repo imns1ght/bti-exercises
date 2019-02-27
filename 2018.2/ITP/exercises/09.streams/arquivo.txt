@@ -1,0 +1,12 @@
+Candidato 1 : 1234
+Candidato 2 : 1300
+Candidato 3 : 1700
+Candidato 4 : 1200
+Candidato 5 : 5100
+Candidato 6 : 3434
+Candidato 7 : 5879
+Candidato 8 : 9876
+Candidato 9 : 5432
+Candidato 10 : 1
+
+

@@ -1,0 +1,1 @@
+Result when writing an int to file: 1729

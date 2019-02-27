@@ -1,0 +1,88 @@
+\hypertarget{namespaceft}{}\section{ft Namespace Reference}
+\label{namespaceft}\index{ft@{ft}}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} = int
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{namespaceft_a4316f330162c6d79eef57fa84bf0ac68}{filter\+\_\+lin}} (\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$first, \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$last)
+\begin{DoxyCompactList}\small\item\em Linear filter algorithm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{namespaceft_ad44a5fa501d9597c6b2d057a379f4803}{filter\+\_\+quad}} (\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$first, \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$last)
+\begin{DoxyCompactList}\small\item\em Quadratic filter algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceft_a076c091630cdeb4076ec793da6ab56c0}\label{namespaceft_a076c091630cdeb4076ec793da6ab56c0}} 
+\index{ft@{ft}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!ft@{ft}}
+\subsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{ft\+::value\+\_\+type}} = typedef int}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceft_a4316f330162c6d79eef57fa84bf0ac68}\label{namespaceft_a4316f330162c6d79eef57fa84bf0ac68}} 
+\index{ft@{ft}!filter\_lin@{filter\_lin}}
+\index{filter\_lin@{filter\_lin}!ft@{ft}}
+\subsubsection{\texorpdfstring{filter\_lin()}{filter\_lin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$ ft\+::filter\+\_\+lin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$}]{first,  }\item[{\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$}]{last }\end{DoxyParamCaption})}
+
+
+
+Linear filter algorithm. 
+
+Remove negative and null elements from the range {\ttfamily \mbox{[}first;last)} of integers, returning a pointer to the end of the resulting (possibly new) interval.
+
+The filter process preserves the original relative order of the remaining (positive) integers.
+
+The algorithm does not delete memory. It just moves the filtered elements to the begining of the range, preserving their original relative order. Therefore, only the logical length of the range might be altered as a result of the filter operation.
+
+This version implements the {\bfseries{linear}} slow/fast approach, copying the elements around, within the range memory space. This means that no extra memory is allocated.
+
+\begin{DoxyNote}{Note}
+Undefined behavior if the range provided is invalid.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em first} & The begining of the range we want to filter. \\
+\hline
+{\em last} & The end (just past the last) of the range we want to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new last, after the elements have been filtered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceft_ad44a5fa501d9597c6b2d057a379f4803}\label{namespaceft_ad44a5fa501d9597c6b2d057a379f4803}} 
+\index{ft@{ft}!filter\_quad@{filter\_quad}}
+\index{filter\_quad@{filter\_quad}!ft@{ft}}
+\subsubsection{\texorpdfstring{filter\_quad()}{filter\_quad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$ ft\+::filter\+\_\+quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$}]{first,  }\item[{\mbox{\hyperlink{namespaceft_a076c091630cdeb4076ec793da6ab56c0}{value\+\_\+type}} $\ast$}]{last }\end{DoxyParamCaption})}
+
+
+
+Quadratic filter algorithm. 
+
+Remove negative and null elements from the range {\ttfamily \mbox{[}first;last)} of integers, returning a pointer to the end of the resulting (possibly new) interval.
+
+The filter process preserves the original relative order of the remaining (positive) integers.
+
+The algorithm does not delete memory. It just moves the filtered elements to the begining of the range, preserving their original relative order. Therefore, only the logical length of the range might be altered as a result of the filter operation.
+
+This version implements the {\bfseries{quadratic}} approach, which shifts the entire array whenever a negative/null element is found, thus overriding that target (filtered) element. Because of this (inefficient) movement of memory, the algorithm is quadratic.
+
+\begin{DoxyNote}{Note}
+Undefined behavior if the range provided is invalid.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em first} & The begining of the range we want to filter. \\
+\hline
+{\em last} & The end (just past the last) of the range we want to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new last, after the elements have been filtered. 
+\end{DoxyReturn}

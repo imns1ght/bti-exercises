@@ -1,0 +1,96 @@
+\hypertarget{searching_8cpp}{}\section{src/searching.cpp File Reference}
+\label{searching_8cpp}\index{src/searching.cpp@{src/searching.cpp}}
+
+
+Implementing linear and binary search (iterative version).  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}\label{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}} 
+using \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} = int
+\begin{DoxyCompactList}\small\item\em Simple alias to help code maintenance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{searching_8cpp_af198eff593d57c4a62e996bf4fa226bd}{lsearch}} (const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$first, const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$last, \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} value)
+\begin{DoxyCompactList}\small\item\em Implements an iterative linear seach on an range \mbox{[}first; last) of integers. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$ \mbox{\hyperlink{searching_8cpp_a71a7c986b068271b152f5f31518d33d9}{bsearch}} (const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$first, const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$last, \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} value)
+\begin{DoxyCompactList}\small\item\em Implements an interative binary search on an array of integers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{searching_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{searching_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementing linear and binary search (iterative version). 
+
+\begin{DoxyAuthor}{Author}
+Selan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August, 9th 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{searching_8cpp_a71a7c986b068271b152f5f31518d33d9}\label{searching_8cpp_a71a7c986b068271b152f5f31518d33d9}} 
+\index{searching.cpp@{searching.cpp}!bsearch@{bsearch}}
+\index{bsearch@{bsearch}!searching.cpp@{searching.cpp}}
+\subsubsection{\texorpdfstring{bsearch()}{bsearch()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}}$\ast$ bsearch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$}]{first,  }\item[{const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$}]{last,  }\item[{\mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Implements an interative binary search on an array of integers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & Pointer to the first element in the range. \\
+\hline
+{\em offset} & Pointer to the mid element in the range. \\
+\hline
+{\em last} & Pointer to the last element in the range. \\
+\hline
+{\em value} & The target value we are looking for within the range. \\
+\hline
+{\em end} & Pointer past the last valid element in the range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the target value within the range; or last, in case the value is not in the range. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file searching.\+cpp.
+
+\mbox{\Hypertarget{searching_8cpp_af198eff593d57c4a62e996bf4fa226bd}\label{searching_8cpp_af198eff593d57c4a62e996bf4fa226bd}} 
+\index{searching.cpp@{searching.cpp}!lsearch@{lsearch}}
+\index{lsearch@{lsearch}!searching.cpp@{searching.cpp}}
+\subsubsection{\texorpdfstring{lsearch()}{lsearch()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}}$\ast$ lsearch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$}]{first,  }\item[{const \mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}} $\ast$}]{last,  }\item[{\mbox{\hyperlink{searching_8cpp_a74b3815dcd9435a335e5e133b2e2429e}{value\+\_\+type}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Implements an iterative linear seach on an range \mbox{[}first; last) of integers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & Pointer to the first element in the range. \\
+\hline
+{\em last} & Pointer past the last valid element in the range. \\
+\hline
+{\em value} & The target value we are looking for within the range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the target value within the range; or last, in case the value is not in the range. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file searching.\+cpp.
+

@@ -1,0 +1,8 @@
+# Tempos de execução da função filter.
+# Amonstra (n) Algoritmo_1(tempo) Algoritmo_2(tempo)
+5000        39.6    0.04
+10000       120     0.07
+20000       425     0.19
+40000       1627    0.25
+80000       6555    0.51
+160000      25993   1.2

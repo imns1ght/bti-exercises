@@ -1,0 +1,104 @@
+This program might be use to compare the execution time of two algorithms from different complexity classes to solve the filter problem.
+
+Based on some preprocessing directives setup while compiling this program, it is possible to print out the execution time of the chosen algorithm for a given input of size defined by command line argument.
+
+\section*{2. The Problem}
+
+The filter problem is\+: \begin{quote}
+Given the range {\ttfamily \mbox{[}first;last)} defined over an array of integers, remove all the null and negative elements, and return a pointer to the new {\ttfamily last}, which should define a range containing the filtered elements. The processes must preserve the relative order of the elements that will be kept in the new range. \end{quote}
+
+
+\subsection*{Example}
+
+Given the range {\ttfamily \mbox{[}first;last)} with the following values \begin{quote}
+-\/3, 4, 8, 0, -\/2, 7, 0, 12, -\/1 \end{quote}
+
+
+the program should return the pointer {\ttfamily last} so that if we print {\ttfamily \mbox{[}first;last)} again we get \begin{quote}
+4, 8, 7, 12 \end{quote}
+
+
+If all elements in the input range are null or negative, the output range {\ttfamily \mbox{[}first, last)} should be empty.
+
+If all elements in the input range are positive, the output range {\ttfamily \mbox{[}first,last)} should be the same as the input.
+
+\section*{3. Compiling}
+
+To compile you may enter this at the terminal prompt\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -Wall -std=c++11 filter\_runtime.cpp -o filter}
+\end{DoxyCode}
+
+
+Alternatively, a cmake file is available. Follow the steps below\+:
+
+
+\begin{DoxyEnumerate}
+\item Create a build directory\+: {\ttfamily mkdir build}.
+\item Change into the build directory\+: {\ttfamily cd build}.
+\item Generate the project file (Makefile)\+: {\ttfamily cmake -\/G \char`\"{}\+Unix Makefiles\char`\"{} ..}
+\item Compile each target ({\ttfamily timing\+\_\+filter} and {\ttfamily run\+\_\+tests}) or both targets at the same time\+: {\ttfamily cmake -\/-\/build . -\/-\/configure Release -\/-\/target timing\+\_\+filter} or {\ttfamily cmake -\/-\/build . -\/-\/configure Release -\/-\/target run\+\_\+tests}
+\end{DoxyEnumerate}
+
+\subsection*{Setting the execution options}
+
+The program has several {\itshape preprocessing directives} that might be added to the compile line and enables you to choose between the following running options\+:
+
+
+\begin{DoxyItemize}
+\item We may choose between a {\itshape linear} and a {\itshape quadractic} algorithm to solve the problem.
+\begin{DoxyItemize}
+\item Add {\ttfamily -\/D A\+L\+GO=\char`\"{}\+Q\+U\+A\+D\char`\"{}} to choose the quadratic algorithm.
+\item Add {\ttfamily -\/D A\+L\+GO=\char`\"{}\+L\+I\+N\char`\"{}} to choose the linear algorithm (default option).
+\end{DoxyItemize}
+\item We may choose between the three types input range configuration\+:
+\begin{DoxyItemize}
+\item Add {\ttfamily -\/D C\+A\+SE=\char`\"{}\+A\+V\+E\+R\+A\+G\+E\char`\"{}} to generate input values randomly chosen from {\ttfamily \mbox{[}-\/100;100\mbox{]}} (default option).
+\item Add {\ttfamily -\/D C\+A\+SE=\char`\"{}\+W\+O\+R\+S\+T\char`\"{}} to generate only null or negative input values.
+\item Add {\ttfamily -\/D C\+A\+SE=\char`\"{}\+B\+E\+S\+T\char`\"{}} to generate only positive input values.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+While compiling you may also turn on/off the following preprocessing directives\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/D D\+E\+B\+UG}\+: to print out messages that explain intermediate steps of the running algorithm.
+\item {\ttfamily -\/D P\+R\+I\+NT}\+: to print the input and the output range.
+\end{DoxyItemize}
+
+By default, i.\+e. if no preprocessing directive is provided while compiling, the program runs with the following parameters set\+:
+
+
+\begin{DoxyItemize}
+\item Range with 20 elements in the average case.
+\item The linear algorithm.
+\item Not printing the input/output range.
+\item Not displaying any debug message.
+\end{DoxyItemize}
+
+\section*{4. Running}
+
+To run you may inform the size of the input range, which should be filled with random values\+: {\ttfamily \$ .\textbackslash{}filter \mbox{[}input\+\_\+size\mbox{]}}
+
+For instance, the example below
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ .\(\backslash\)filter}
+\end{DoxyCode}
+
+
+runs filter with 20 random values, whereas the example below
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ .\(\backslash\)filter 100}
+\end{DoxyCode}
+
+
+runs filter with 100 random values.
+
+In case you provide an invalid input value, the program defaults to 20. 

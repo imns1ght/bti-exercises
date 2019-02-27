@@ -1,0 +1,35 @@
+This exercise focuses on two basic types of {\bfseries{search algorithms}} applied to a {\bfseries{sequence container}} implemented with {\itshape array}.
+
+In particular, you should implement two iterative functions, a {\bfseries{linear search}} and a {\bfseries{binary search}}. Remember that the binary search requires a sorted range, whereas the linear search does not.
+
+The functions are called on ranges defined over an array of integers. Therefore they receive three parameters\+: two iterators (pointers) that define a half-\/closed interval for searching, {\ttfamily \mbox{[}first;last)}, and the {\ttfamily value} we are looking for. In case the search is successful, the function should return an iterator to the location of the target element; otherwise, the function should return {\ttfamily last}.
+
+Finally, assume that the elements in the search range are {\itshape unique}, i.\+e. there is no repeated elements in the range.
+
+\section*{T\+O\+DO}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} Implement the iterative versions of the linear search and binary search.
+\item \mbox{[}x\mbox{]} Test the functions.
+\item \mbox{[} \mbox{]} Compare the runtime of the search algorithms implemented.
+\end{DoxyItemize}
+
+\section*{Further work}
+
+To improve your programming skills, runtime measurements experience, and your knowledge on recursion, you may want to\+:
+
+
+\begin{DoxyEnumerate}
+\item Implement recursive versions for these two algorithms;
+\item Measure the search runtime in the worst case on ranges with large size;
+\item Implement the ternary search, which follows the binary search approach but rather dividing the range into three (almost) equal parts;
+\item Run the versions already implemented in the {\ttfamily $<$cstdlib.\+h$>$}, \href{http://en.cppreference.com/w/cpp/algorithm/bsearch}{\texttt{ {\ttfamily bsearch()}}}, and in {\ttfamily $<$algorithm$>$}, \href{http://en.cppreference.com/w/cpp/algorithm/binary_search}{\texttt{ {\ttfamily binary\+\_\+search()}}}, and;
+\item Compare the runtime of the algorithms implemented, as their input size increases linearly.
+\end{DoxyEnumerate}
+
+\section*{Authorship}
+
+Program developed by Selan (\href{mailto:selan@dimap.ufrn.br}{\texttt{ selan@dimap.\+ufrn.\+br}}) and students from E\+D\+B1, 2018.\+2
+
+\copyright{} D\+I\+M\+Ap/\+U\+F\+RN 2016-\/2018. 

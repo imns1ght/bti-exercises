@@ -34,29 +34,29 @@ const value_type * lsearch(const value_type *first, const value_type *last, valu
 /// Implements an interative binary search on an array of integers.
 /*!
  * \param first Pointer to the first element in the range.
- * \param offset Pointer to the mid element in the range.
  * \param last Pointer to the last element in the range.
  * \param value The target value we are looking for within the range.
- * \param end Pointer past the last valid element in the range.
  * \return A pointer to the target value within the range; or last, in case the value is not in the range.
  */
 const value_type * bsearch(const value_type *first, const value_type *last, value_type value)
 {
-	auto end = last;
+	auto distance = std::distance(first, last); /* Current length */
 
-	while ((value >= *first) && (value <= *(last - 1))) {
-		auto offset = first + ((last - first) / 2);
+	while (distance > 0) {
+		auto offset = distance / 2; // Determine the mid element of the range
+		auto m = first + offset; // Mid element pointer
 
-		if (value == *offset) {
-			return offset;
-		} else if (value > *offset) {
-			first = offset;
-		} else if (value < *offset) {
-			last = offset;
+		if (value == *m) {
+			return m;
+		} else if (value > *m) { // If the element is on the right
+			distance -= offset + 1; // Determines the range for one element after mid 
+			first = ++m; // Determines the first element for one element after mid
+		} else if (value < *m) { // If the element is on the left
+			distance = offset; 
 		}
 	}
 
-	return end;
+	return last; // If the value is not found 
 }
 
 // Driver function.

@@ -1,0 +1,47 @@
+.TH "md__r_e_a_d_m_e" 3 "Wed Feb 27 2019" "Linear/Binary Search" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- Introduction 
+This exercise focuses on two basic types of \fBsearch algorithms\fP applied to a \fBsequence container\fP implemented with \fIarray\fP\&.
+.PP
+In particular, you should implement two iterative functions, a \fBlinear search\fP and a \fBbinary search\fP\&. Remember that the binary search requires a sorted range, whereas the linear search does not\&.
+.PP
+The functions are called on ranges defined over an array of integers\&. Therefore they receive three parameters: two iterators (pointers) that define a half-closed interval for searching, \fC[first;last)\fP, and the \fCvalue\fP we are looking for\&. In case the search is successful, the function should return an iterator to the location of the target element; otherwise, the function should return \fClast\fP\&.
+.PP
+Finally, assume that the elements in the search range are \fIunique\fP, i\&.e\&. there is no repeated elements in the range\&.
+.PP
+.SH "TODO"
+.PP
+.PP
+.IP "\(bu" 2
+[x] Implement the iterative versions of the linear search and binary search\&.
+.IP "\(bu" 2
+[x] Test the functions\&.
+.IP "\(bu" 2
+[ ] Compare the runtime of the search algorithms implemented\&.
+.PP
+.PP
+.SH "Further work"
+.PP
+.PP
+To improve your programming skills, runtime measurements experience, and your knowledge on recursion, you may want to:
+.PP
+.IP "1." 4
+Implement recursive versions for these two algorithms;
+.IP "2." 4
+Measure the search runtime in the worst case on ranges with large size;
+.IP "3." 4
+Implement the ternary search, which follows the binary search approach but rather dividing the range into three (almost) equal parts;
+.IP "4." 4
+Run the versions already implemented in the \fC<cstdlib\&.h>\fP, \fC\fCbsearch()\fP\fP, and in \fC<algorithm>\fP, \fC\fCbinary_search()\fP\fP, and;
+.IP "5." 4
+Compare the runtime of the algorithms implemented, as their input size increases linearly\&.
+.PP
+.PP
+.SH "Authorship"
+.PP
+.PP
+Program developed by Selan (selan@dimap.ufrn.br) and students from EDB1, 2018\&.2
+.PP
+(C) DIMAp/UFRN 2016-2018\&. 

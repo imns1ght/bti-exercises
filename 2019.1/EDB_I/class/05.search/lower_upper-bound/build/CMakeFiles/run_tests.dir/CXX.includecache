@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/05.search/lower_upper-bound/include/bsearch.h
+iterator
+-
+gtest/gtest.h
+-
+
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/05.search/lower_upper-bound/src/bsearch.cpp
+../include/bsearch.h
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/05.search/lower_upper-bound/include/bsearch.h
+
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/05.search/lower_upper-bound/test/bs_tests.cpp
+gtest/gtest.h
+-
+../include/bsearch.h
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/05.search/lower_upper-bound/include/bsearch.h
+iterator
+-
+

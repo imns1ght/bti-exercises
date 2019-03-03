@@ -11,16 +11,39 @@ namespace bs {
 /// Returns an iterator pointing to the first element in the range [first, last) that is not less than (i.e. greater or equal to) value, or last if no such element is found.
 bs::value_type * lbound( bs::value_type * first, bs::value_type * last, bs::value_type value )
 {
-	// TODO: Insert here your solution for the lower bound problem.
+	auto distance = std::distance(first, last); // Current length
+
+ 	while (distance > 0) {
+    		auto offset = distance / 2; // Determine the mid element of the range
+		auto m = first + offset; // Pointer for the element located in mid
+    		
+		if (value > *m) { // If the element is on the right
+      			distance -= offset + 1; // Determines the range for one element after mid 
+			first = ++m; // Determines the first element for one element after mid
+    		} else {
+			distance = offset;
+  		}	
+	}
 
 	return first; // stub, not valid.
 }
 
-
 /// Returns an iterator pointing to the first element in the range [first, last) that is *greater* than value, or last if no such element is found.
 bs::value_type * ubound( bs::value_type * first, bs::value_type * last, bs::value_type value )
 {
-	// TODO: Insert here your solution for the lower bound problem.
+	auto distance = std::distance(first, last); // Current length
+
+ 	while (distance > 0) {
+    		auto offset = distance / 2; // Determine the mid element of the range
+		auto m = first + offset; // Pointer for the element located in mid
+    		
+		if (value >= *m) { // If the element is not less than value
+      			distance -= offset + 1; // Determines the range for one element after mid 
+			first = ++m; // Determines the first element for one element after mid
+    		} else {
+			distance = offset;
+  		}	
+	}
 
 	return first; // stub, not valid.
 }
@@ -38,7 +61,7 @@ bs::value_type * bsearch( bs::value_type * first, bs::value_type * last, bs::val
 
 	while (distance > 0) {
 		auto offset = distance / 2; // Determine the mid element of the range
-		auto m = first + offset; // Pointer to the element located in mid
+		auto m = first + offset; // Pointer for the element located in mid
 
 		if (value == *m) {
 			return m;

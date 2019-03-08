@@ -1,11 +1,3 @@
-/* Exercise 2
- *
- * Neste exercı́cio você deve ler uma sequência de inteiros de comprimento desconhecido a partir de
- * um arquivo de entrada fornecido pelo usuário. Você, então, deve armazenar os números lidos em um
- * std::vector e depois abrir um arquivo de saı́da invertido.txt e gravar os mesmo números na
- * ordem inversa que foram lidos, um por linha.
- */
-
 #ifndef INVERSE_H
 #define INVERSE_H
 

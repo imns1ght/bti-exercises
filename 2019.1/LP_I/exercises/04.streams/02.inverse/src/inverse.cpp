@@ -1,45 +1,11 @@
-/* Exercise 2
- *
- * Neste exercı́cio você deve ler uma sequência de inteiros de comprimento desconhecido a partir de
- * um arquivo de entrada fornecido pelo usuário. Você, então, deve armazenar os números lidos em um
- * std::vector e depois abrir um arquivo de saı́da invertido.txt e gravar os mesmo números na
- * ordem inversa que foram lidos, um por linha.
- */
-
 #include "../include/inverse.h"
 
-int main (void) 
+void writeInverse(ofstream &ofs, vector<int> numbers)
 {
-	int n; 		     
-	vector<int> numbers; // Store the numbers we read from the input file.
-
-	ifstream ifs; 
-	askUserFileName(ifs, ">>> Please, enter a file name: "); 
-	ofstream ofs ("../data/invertido.txt");
-	
-	// Keeps reading until EOF.
-	while (ifs >> n) { 	
-		numbers.push_back(n);
+	cout << ">>> Data written" << endl;
+	for (auto i = numbers.end()-1; i != numbers.begin()-1; i--) {
+        	ofs << *i << endl; // Send numbers to file
+		cout << *i << " "; // Print the numbers on the console
 	}
-
-	if (!ifs.eof()) { // If EOF isn't reached
-		cerr << ">>> Data error in file!" << endl ;
-		return EXIT_FAILURE;
-	} else {
-		cout << ">>> Data successfully read" << endl;
-	}
-
-	// Numbers read from file
-	for (auto i = numbers.begin(); i != numbers.end(); i++) {
-        	cout << *i << " "; 
-	}
-	cout << endl << endl;
-
-	writeInverse(ofs, numbers);
-	
-	ifs.close();
-	ofs.close();
-
-	return EXIT_SUCCESS;
+	cout << endl;
 }
-

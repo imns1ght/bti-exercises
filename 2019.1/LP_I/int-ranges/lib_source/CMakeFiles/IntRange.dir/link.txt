@@ -1,0 +1,2 @@
+/usr/bin/ar qc libIntRange.a  CMakeFiles/IntRange.dir/src/int_ranges.cpp.o
+/usr/bin/ranlib libIntRange.a

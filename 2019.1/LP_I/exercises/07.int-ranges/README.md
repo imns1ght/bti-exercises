@@ -28,7 +28,7 @@ To compile the libray only we shoudl follow these steps:
 1. `cd lib_source`: enters into the main project directory.
 2. `mkdir build`: this creates a new directory in which the compilation output will be stored, including the executable.
 3. `cd build`: just moves into the directory created in the step above.
-4. `cmake -G "Unix Makefiles" ..`: asks cmake to create the Makefile based on the script found in `CMakeLists.txt`, one level up.
+4. `cmake -G "Unix Makefiles" .. .`: asks cmake to create the Makefile based on the script found in `CMakeLists.txt`, one level up.
 5. `cmake --build .`: triggers the compiling process.
 5. `make install`: copies the library to the `lib` directory.
 

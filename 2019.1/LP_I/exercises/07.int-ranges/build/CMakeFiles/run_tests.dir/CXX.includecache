@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/imns1ght/workspace/bti-exercises/2019.1/LP_I/exercises/07.int-ranges/include/int_ranges.h
+iostream
+-
+iterator
+-
+algorithm
+-
+
+/home/imns1ght/workspace/bti-exercises/2019.1/LP_I/exercises/07.int-ranges/test/main.cpp
+iterator
+-
+gtest/gtest.h
+/home/imns1ght/workspace/bti-exercises/2019.1/LP_I/exercises/07.int-ranges/test/gtest/gtest.h
+../include/int_ranges.h
+/home/imns1ght/workspace/bti-exercises/2019.1/LP_I/exercises/07.int-ranges/include/int_ranges.h
+

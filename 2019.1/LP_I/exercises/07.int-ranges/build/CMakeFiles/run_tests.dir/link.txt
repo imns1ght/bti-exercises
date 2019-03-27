@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g   CMakeFiles/run_tests.dir/test/main.cpp.o  -o run_tests /usr/lib/libgtest.so -lpthread libIntRange.a 

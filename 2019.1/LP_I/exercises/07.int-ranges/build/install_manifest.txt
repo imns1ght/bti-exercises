@@ -1,0 +1,1 @@
+/home/imns1ght/workspace/bti-exercises/2019.1/LP_I/exercises/07.int-ranges/lib/libIntRange.a

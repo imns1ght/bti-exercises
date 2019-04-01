@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g   CMakeFiles/si.dir/sorted_insert.cpp.o  -o si 

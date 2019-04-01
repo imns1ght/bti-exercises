@@ -1,0 +1,3 @@
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/12.order/sorted_insert/build/CMakeFiles/rebuild_cache.dir
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/12.order/sorted_insert/build/CMakeFiles/si.dir
+/home/imns1ght/workspace/bti-exercises/2019.1/EDB_I/class/12.order/sorted_insert/build/CMakeFiles/edit_cache.dir

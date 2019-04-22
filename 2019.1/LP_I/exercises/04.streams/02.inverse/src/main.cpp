@@ -6,40 +6,40 @@
  * ordem inversa que foram lidos, um por linha.
  */
 
+#include "../include/askFile.h"
 #include "../include/inverse.h"
 
-int main (void) 
-{
-	int n; 		     
-	vector<int> numbers; // Store the numbers we read from the input file.
+int main(void) {
+        int n;
+        vector<int> numbers;  // Store the numbers we read from the input file.
 
-	ifstream ifs; 
-	askUserFileName(ifs, ">>> Please, enter a file name: "); 
-	ofstream ofs ("../data/invertido.txt");
-	
-	// Keeps reading until EOF.
-	while (ifs >> n) { 	
-		numbers.push_back(n);
-	}
+        ifstream ifs;  // Input
+        askUserFileName(ifs, ">>> Please, enter a file name: ");
+        ofstream ofs("../data/invertido.txt");  // Output
 
-	if (!ifs.eof()) { // If EOF isn't reached
-		cerr << ">>> Data error in file!" << endl ;
-		return EXIT_FAILURE;
-	} else {
-		cout << ">>> Data successfully read" << endl;
-	}
+        // Keeps reading until EOF.
+        while (ifs >> n) {
+                numbers.push_back(n);
+        }
 
-	// Numbers read from file
-	for (auto i = numbers.begin(); i != numbers.end(); i++) {
-        	cout << *i << " "; 
-	}
-	cout << endl << endl;
+        if (!ifs.eof()) {  // If EOF isn't reached
+                cerr << ">>> Data error in file!" << endl;
+                return EXIT_FAILURE;
+        } else {
+                cout << ">>> Data successfully read" << endl;
+        }
 
-	writeInverse(ofs, numbers);
-	
-	ifs.close();
-	ofs.close();
+        // Numbers read from file
+        for (auto i = numbers.begin(); i != numbers.end(); i++) {
+                cout << *i << " ";
+        }
+        cout << endl
+             << endl;
 
-	return EXIT_SUCCESS;
+        writeInverse(ofs, numbers);
+
+        ifs.close();
+        ofs.close();
+
+        return EXIT_SUCCESS;
 }
-

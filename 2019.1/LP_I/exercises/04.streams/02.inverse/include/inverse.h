@@ -1,9 +1,9 @@
 #ifndef INVERSE_H
 #define INVERSE_H
 
-#include <iostream> // std::cout, std::cin
-#include <fstream>  // std::ifstream
-#include <vector>   // std::vector
+#include <fstream>   // std::ifstream
+#include <iostream>  // std::cout, std::cin
+#include <vector>    // std::vector
 
 using namespace std;
 

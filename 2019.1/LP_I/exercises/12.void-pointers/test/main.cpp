@@ -1,9 +1,8 @@
-#include <iterator> // std::begin(), std::end()
-
-#include "../include/graal.h" // header file for tested functions
-#include "gtest/gtest.h"      // gtest lib
-#include <algorithm>          // std::min_element
-#include <functional>         // std::function
+#include <algorithm>           // std::min_element
+#include <functional>          // std::function
+#include <iterator>            // std::begin(), std::end()
+#include "../include/graal.h"  // header file for tested functions
+#include "gtest/gtest.h"       // gtest lib
 
 using namespace graal;
 

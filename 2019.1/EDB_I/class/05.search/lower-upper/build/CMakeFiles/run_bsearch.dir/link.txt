@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall   CMakeFiles/run_bsearch.dir/src/app.cpp.o CMakeFiles/run_bsearch.dir/src/bsearch.cpp.o  -o run_bsearch 

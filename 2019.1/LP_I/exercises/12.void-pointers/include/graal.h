@@ -5,7 +5,7 @@
 #include <cstring>
 #include <iostream>
 #include <iterator>
-#include "../include/client.h"  // Functions provide by client
+#include "../include/client.h"  // Functions provided by client
 
 namespace graal {
 

@@ -10,22 +10,20 @@
 double function1(double x) { return 5; }
 double function2(double x) { return sin(2 * x) + cos(5 * x); }
 
-// Limites
-double a = 0;
-double b;
-double h;
-long t;
-long n;
-double threadsValues[10];  // Valores retornado pelas threads
+double a = 0;  // Limite a
+double b;      // Limite b, definido de acordo com a função desejada
+double h;      // Necessário o número de trapézios e os limites 'a' e 'b'
+long t;        // Número de threads
+long n;        // Número de trapézios
+double threadsValues[10];  // Resultados das threads
 double (*f)(double);       // Ponteiro para a função desejada pelo usuário
 
 void* calc(void* id) {
     long idThread = (long)id;
     threadsValues[idThread] = 0;
 
-    // (Número de trapézios / número de threads)
+    // Previne problemas com divisões não-inteiras
     long trapsPerThread = n / (t - 1);
-    // Número de trapézios da última thread
     long trapsLastThread = n % (t - 1);
 
     long local_a = idThread * trapsPerThread;

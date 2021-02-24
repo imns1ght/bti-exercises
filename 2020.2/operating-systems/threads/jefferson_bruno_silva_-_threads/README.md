@@ -2,7 +2,7 @@
 
 ## Introdução
 
-O software resolve integrais definidas utilizando o método da Regra do trapézio trabalhando com o pthread da linguagem C.
+O software resolve integrais definidas através do método da regra do trapézio utilizando o `pthread` da linguagem C.
 
 As funções disponíveis são:
 

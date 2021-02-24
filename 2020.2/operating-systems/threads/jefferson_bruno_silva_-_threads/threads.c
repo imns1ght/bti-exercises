@@ -70,7 +70,6 @@ long main(long argc, char* argv[]) {
         totalArea += threadsValues[i];
     }
     totalArea = h * totalArea;
-
     printf("Área total: %.2e\n", totalArea);
 
     return 0;

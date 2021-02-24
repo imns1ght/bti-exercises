@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     }
     area_total = h * area_total;
 
-    printf("area_total %e \n", area_total);
+    printf("area_total %.2e \n", area_total);
 
     return 0;
 }

@@ -7,7 +7,7 @@ O software resolve integrais definidas através do método da regra do trapézio
 As funções disponíveis são:
 
 - `f1(𝑥) = 5,0, 𝑎 = 0,0, 𝑏 = 10,0`
-- `f2(𝑥) = sen 2,0 ∗ 𝑥 + cos (5,0 ∗ 𝑥), 𝑎 = 0,0, 𝑏 = 2,0`
+- `f2(𝑥) = sen 2,0 ∗ 𝑥 + cos (5,0 ∗ 𝑥), 𝑎 = 0,0, 𝑏 = 2,0 * PI`
 
 ## Alunos
 

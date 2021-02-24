@@ -7,46 +7,46 @@
 
 #define PI acos(-1)
 
+double function1(double x) { return 5; }
+double function2(double x) { return sin(2 * x) + cos(5 * x); }
+
 // Limites
 double a = 0;
 double b;
 double h;
+long t;
+long n;
+double threadsValues[10];  // Valores retornado pelas threads
+double (*f)(double);       // Ponteiro para a função desejada pelo usuário
 
-// (Número de trapézios / número de threads)
-int trapezoidsPerThread;
-// Número de trapézios da última thread
-int trapezoidsLastThread;
+void* calc(void* id) {
+    long idThread = (long)id;
+    threadsValues[idThread] = 0;
 
-double (*f)(double);  // Ponteiro para a função desejada pelo usuário
+    // (Número de trapézios / número de threads)
+    long trapsPerThread = n / (t - 1);
+    // Número de trapézios da última thread
+    long trapsLastThread = n % (t - 1);
 
-double function1(double x) { return 5; }
-double function2(double x) { return sin(2 * x) + cos(5 * x); }
+    long local_a = idThread * trapsPerThread;
+    long local_b =
+        local_a + (idThread == (t - 1) ? trapsLastThread : trapsPerThread);
+    fprintf(stderr, "local_a = %ld\n", local_a);
+    fprintf(stderr, "local_b = %ld\n", local_b);
 
-void* calc(void* i) {
-    double total;
-    double* result;
-    int local_a = *(int*)i * trapezoidsPerThread;
-    int local_b = local_a + trapezoidsPerThread;
-
-    for (double i = local_a; i < local_b; i++) {
-        double x_i = (a + i) * h;
-        total += (*f)(x_i);
+    for (long i = local_a; i < local_b; i++) {
+        if (i != 0) {
+            double x_i = (a + i) * h;
+            fprintf(stderr, "x_i [%d]= %f\n", i, x_i);
+            threadsValues[idThread] += (*f)(x_i);
+        }
     }
-
-    result = &total;
-
-    return result;
 }
 
-int main(int argc, char* argv[]) {
-    int t = atoi(argv[2]);  // Número de threads
-    int n = atoi(argv[3]);  // Número de trapézios
+long main(long argc, char* argv[]) {
+    t = atoi(argv[2]);  // Número de threads
+    n = atoi(argv[3]);  // Número de trapézios
     pthread_t threads[t];
-    double* threadsValues[t];  // Valores retornado pelas threads
-    // (Número de trapézios / número de threads)
-    trapezoidsPerThread = n / t;
-    // Número de trapézios da última thread
-    trapezoidsLastThread = n - trapezoidsPerThread * t;
 
     // Verifica qual função o usuário deseja
     if (!strcmp(argv[1], "f1")) {
@@ -65,28 +65,20 @@ int main(int argc, char* argv[]) {
     h = (b - a) / n;
     double totalArea = (f(a) + f(b)) / 2;
 
-    // for (double i = 1; i < n; i++) {
-    //     double x_i = (a + i) * h;
-    //     totalArea += (*f)(x_i);
-    // }
-
-    for (int i = 0; i < t; i++) {
-        int* thread_a = &i;
-        if (pthread_create(&threads[i], NULL, calc, thread_a) != 0) {
-            printf("Erro ao criar a thread[%d]", i);
-        } else {
-            printf("Thread[%d] criada com sucesso!\n", i);
-        }
+    for (long i = 0; i < t; i++) {
+        pthread_create(&threads[i], NULL, calc, (void*)(i));
     }
 
-    // Espera as threads finalizarem suas rotinas e adiciona os resultados
-    for (int i = 0; i < t; i++) {
-        pthread_join(threads[i], (void*)&threadsValues[i]);
-        totalArea += *threadsValues[i];
+    // Espera as threads finalizarem suas rotinas
+    for (long i = 0; i < t; i++) {
+        pthread_join(threads[i], NULL);
+        totalArea += threadsValues[i];
+        printf("\nÁrea total: %e\n", totalArea);
     }
     totalArea = h * totalArea;
 
     printf("\nÁrea total: %e\n", totalArea);
+    printf("h=%f\n", h);
 
     return 0;
 }
